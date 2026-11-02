@@ -1,0 +1,247 @@
+{
+  "MOT17-02": {
+    "fps": 30.0,
+    "length": 600,
+    "width": 1920,
+    "height": 1080,
+    "gt_sha256": "2e3ecb488da8886d3200d402b2b08890c6d2879923839444e9b74fa43a551440",
+    "tune": {
+      "first": 1,
+      "last": 300,
+      "n": 300,
+      "ped_boxes": 8668,
+      "ped_ids": 42
+    },
+    "test": {
+      "first": 301,
+      "last": 600,
+      "n": 300,
+      "ped_boxes": 9913,
+      "ped_ids": 53
+    },
+    "q1": {
+      "first": 1,
+      "last": 150,
+      "n": 150,
+      "ped_boxes": 3852,
+      "ped_ids": 35
+    },
+    "q2": {
+      "first": 151,
+      "last": 300,
+      "n": 150,
+      "ped_boxes": 4816,
+      "ped_ids": 37
+    }
+  },
+  "MOT17-04": {
+    "fps": 30.0,
+    "length": 1050,
+    "width": 1920,
+    "height": 1080,
+    "gt_sha256": "f8cfbe36ef38a2e1857d7ebfe7d754b2355a3ffb9e1f9cedea435e86e4fbc948",
+    "tune": {
+      "first": 1,
+      "last": 525,
+      "n": 525,
+      "ped_boxes": 23331,
+      "ped_ids": 62
+    },
+    "test": {
+      "first": 526,
+      "last": 1050,
+      "n": 525,
+      "ped_boxes": 24226,
+      "ped_ids": 69
+    },
+    "q1": {
+      "first": 1,
+      "last": 262,
+      "n": 262,
+      "ped_boxes": 10849,
+      "ped_ids": 51
+    },
+    "q2": {
+      "first": 263,
+      "last": 525,
+      "n": 263,
+      "ped_boxes": 12482,
+      "ped_ids": 56
+    }
+  },
+  "MOT17-05": {
+    "fps": 14.0,
+    "length": 837,
+    "width": 640,
+    "height": 480,
+    "gt_sha256": "ed74c54176b21b38cb690eda79a4755cf16e4c4a9ca2f019b0ba8904636174f5",
+    "tune": {
+      "first": 1,
+      "last": 418,
+      "n": 418,
+      "ped_boxes": 3554,
+      "ped_ids": 68
+    },
+    "test": {
+      "first": 419,
+      "last": 837,
+      "n": 419,
+      "ped_boxes": 3363,
+      "ped_ids": 71
+    },
+    "q1": {
+      "first": 1,
+      "last": 209,
+      "n": 209,
+      "ped_boxes": 1755,
+      "ped_ids": 20
+    },
+    "q2": {
+      "first": 210,
+      "last": 418,
+      "n": 209,
+      "ped_boxes": 1799,
+      "ped_ids": 54
+    }
+  },
+  "MOT17-09": {
+    "fps": 30.0,
+    "length": 525,
+    "width": 1920,
+    "height": 1080,
+    "gt_sha256": "592f0d5b519c03b35bb1578c33d726460f63abb91ea0c515f87e8d6d76be001d",
+    "tune": {
+      "first": 1,
+      "last": 262,
+      "n": 262,
+      "ped_boxes": 2433,
+      "ped_ids": 17
+    },
+    "test": {
+      "first": 263,
+      "last": 525,
+      "n": 263,
+      "ped_boxes": 2892,
+      "ped_ids": 22
+    },
+    "q1": {
+      "first": 1,
+      "last": 131,
+      "n": 131,
+      "ped_boxes": 948,
+      "ped_ids": 9
+    },
+    "q2": {
+      "first": 132,
+      "last": 262,
+      "n": 131,
+      "ped_boxes": 1485,
+      "ped_ids": 15
+    }
+  },
+  "MOT17-10": {
+    "fps": 30.0,
+    "length": 654,
+    "width": 1920,
+    "height": 1080,
+    "gt_sha256": "f8cca05d98fa36d8b6f2b807e03d32407d00d40299d679e4da320e42862677c0",
+    "tune": {
+      "first": 1,
+      "last": 327,
+      "n": 327,
+      "ped_boxes": 6893,
+      "ped_ids": 44
+    },
+    "test": {
+      "first": 328,
+      "last": 654,
+      "n": 327,
+      "ped_boxes": 5946,
+      "ped_ids": 36
+    },
+    "q1": {
+      "first": 1,
+      "last": 163,
+      "n": 163,
+      "ped_boxes": 2984,
+      "ped_ids": 34
+    },
+    "q2": {
+      "first": 164,
+      "last": 327,
+      "n": 164,
+      "ped_boxes": 3909,
+      "ped_ids": 30
+    }
+  },
+  "MOT17-11": {
+    "fps": 30.0,
+    "length": 900,
+    "width": 1920,
+    "height": 1080,
+    "gt_sha256": "4952d6e4efc705c90688e434fd138a55ada2c0d5f576ba3847ee102fc18aff93",
+    "tune": {
+      "first": 1,
+      "last": 450,
+      "n": 450,
+      "ped_boxes": 4909,
+      "ped_ids": 41
+    },
+    "test": {
+      "first": 451,
+      "last": 900,
+      "n": 450,
+      "ped_boxes": 4527,
+      "ped_ids": 44
+    },
+    "q1": {
+      "first": 1,
+      "last": 225,
+      "n": 225,
+      "ped_boxes": 2768,
+      "ped_ids": 27
+    },
+    "q2": {
+      "first": 226,
+      "last": 450,
+      "n": 225,
+      "ped_boxes": 2141,
+      "ped_ids": 23
+    }
+  },
+  "MOT17-13": {
+    "fps": 25.0,
+    "length": 750,
+    "width": 1920,
+    "height": 1080,
+    "gt_sha256": "4827603ef87bbd61123cb4c5f194b3bf23531bd78ed9cd916084e53dca998013",
+    "tune": {
+      "first": 1,
+      "last": 375,
+      "n": 375,
+      "ped_boxes": 8467,
+      "ped_ids": 85
+    },
+    "test": {
+      "first": 376,
+      "last": 750,
+      "n": 375,
+      "ped_boxes": 3175,
+      "ped_ids": 44
+    },
+    "q1": {
+      "first": 1,
+      "last": 187,
+      "n": 187,
+      "ped_boxes": 4715,
+      "ped_ids": 51
+    },
+    "q2": {
+      "first": 188,
+      "last": 375,
+      "n": 188,
+      "ped_boxes": 3752,
+      "ped_ids": 53
+    }
+  }
+}

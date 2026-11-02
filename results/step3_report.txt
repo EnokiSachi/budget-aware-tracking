@@ -1,0 +1,33 @@
+# Step 3 报告：毕设基线标准化评测（MOT17 前半段 tune，7 个序列）
+detection cache: yolov8n_640_none, yolov8n_640_thesis  | mean detector wall time: yolov8n_640_none=12.0ms, yolov8n_640_thesis=17.6ms
+
+## 跟踪精度（%）与跟踪器自身耗时（ms/帧，不含检测）
+tracker                      HOTA      DetA      AssA      MOTA      IDF1      IDSW    Recall Precision    track_ms
+thesis_deepsort             34.52     24.99     48.03     28.75     37.57       153     30.35     95.80       69.73
+thesis_deepsort_shown       34.49     27.49     43.84     26.79     38.24       171     35.69     80.57         nan
+deepsort_nopre              33.74     24.81     46.25     28.41     36.58       148     30.09     95.48       49.26
+sort_own                    36.27     24.07     54.97     27.57     40.06       109     29.07     95.68        0.35
+bytetrack_own               39.37     27.19     57.31     31.09     44.12        93     33.19     94.47        0.38
+
+## 逐序列 HOTA（%）
+seq          thesis_deepsor  thesis_deepsor  deepsort_nopre        sort_own   bytetrack_own
+MOT17-02              27.48           28.22           27.41           27.50           28.35
+MOT17-04              34.48           36.49           33.09           37.79           44.60
+MOT17-05              40.70           34.01           39.35           39.72           39.73
+MOT17-09              47.42           48.48           45.36           46.97           47.32
+MOT17-10              29.73           29.17           29.65           29.93           31.51
+MOT17-11              50.16           46.69           50.31           53.93           51.76
+MOT17-13              22.87           21.77           22.78           22.92           24.50
+
+## 毕设流水线逐环节耗时（复现主循环，不含窗口显示）
+source: test.mp4 1920x1080, 300 frames
+  read            4.6 ms
+  preprocess     28.8 ms   (device=cpu)
+  detect         15.7 ms   (device=0)
+  deepsort       55.4 ms   (device=cpu/gpu-embed)
+  draw            0.4 ms   (device=cpu)
+  write          13.3 ms   (device=cpu)
+  TOTAL         118.2 ms/frame  ≈ 8.5 FPS (GPU detection, no window display)
+  detect on CPU instead: 62.9 ms → TOTAL ≈ 165.4 ms ≈ 6.0 FPS
+
+total time: 470s

@@ -1,0 +1,92 @@
+{
+  "created": "2026-11-02T21:56:33",
+  "reruns_before_this": 0,
+  "split": "second 50% of each MOT17 training sequence (never evaluated before)",
+  "hypotheses": {
+    "H1": "ByteTrack(own) > thesis DeepSORT on HOTA and IDF1, fewer IDSW (detector YOLOv8n@640)",
+    "H2": "fine-tuned detector > best pretrained detector at <= its latency (GPU and CPU, k=1)",
+    "H3": "n-ft@960 k=2 > n-ft@640 k=1 in HOTA at lower CPU cost",
+    "H4": "adaptive scheduling (per-frame learned, segment rule) does NOT beat fixed interval at matched rate (|diff| <= 1 HOTA)",
+    "H5": "on held-out scenes, nx-ft@960 > n@960; gap to n-ft@960 = scene-familiarity share"
+  },
+  "configs": {
+    "grid_k1": [
+      "yolov8n_640_none",
+      "yolov8n_960_none",
+      "yolov8n_1280_none",
+      "yolov8s_640_none",
+      "yolov8s_960_none",
+      "yolov8s_1280_none",
+      "yolov8m_640_none",
+      "yolov8m_960_none",
+      "yolov8m_1280_none",
+      "yolov8n-ft_640_none",
+      "yolov8n-ft_960_none",
+      "yolov8n-ft_1280_none",
+      "yolov8s-ft_640_none",
+      "yolov8s-ft_960_none",
+      "yolov8s-ft_1280_none"
+    ],
+    "fixed_ks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ],
+    "learned_thresholds_from_q2": [
+      0.10009533111818586,
+      0.1449337856134216,
+      0.19832754353442208,
+      0.26188543049540636,
+      0.32891520412528824,
+      0.4004080000944828,
+      0.49270688831460385,
+      0.5952149393273936,
+      0.6981839379468889,
+      0.8251076271755217,
+      0.9823528593846671,
+      1.1325806274064396
+    ],
+    "segment_rule_c": [
+      0.6,
+      1,
+      1.5,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      14,
+      20,
+      30
+    ],
+    "xscene": {
+      "train": [
+        "MOT17-02",
+        "MOT17-04",
+        "MOT17-05",
+        "MOT17-13"
+      ],
+      "heldout": [
+        "MOT17-09",
+        "MOT17-10",
+        "MOT17-11"
+      ]
+    },
+    "detector_for_scheduling": "yolov8n-ft_960_none"
+  },
+  "metrics": "TrackEval HOTA/MOTA/IDF1 (official), matched-rate linear interpolation, per-sequence signs",
+  "hashes": {
+    "schedule_model.pkl": "d95eafea7594bb893d0bef9f48358acd3b3b1db769ccc2c558116ab07e3a1545",
+    "gt_splits.json": "648dd326316383f647c4ef116c53c348fd9181aa172ead5e169537994702a259",
+    "ft_n/best.pt": "9604777307c71e01ca87539020af4c103502fb0c8943a5fc471e95909edf02c9",
+    "ft_s/best.pt": "fa39d6c8da5faf62d20e601791bd6313f0586c55a1c0a3847982d524810d1fb1",
+    "ft_nx/best.pt": "b9dcd4553e76616ee1313ff5950fa67a65eb0b6a7bb4ac5e55c8702af5633d01"
+  }
+}

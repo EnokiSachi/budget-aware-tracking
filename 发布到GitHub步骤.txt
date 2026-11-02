@@ -1,0 +1,26 @@
+发布行人跟踪项目到 GitHub（约 10 分钟，流程和上次风格迁移项目一样）
+
+1) 解压：把压缩包解压到 E:\Code\ ，会在 E:\Code\budget-aware-mot\ 里多出 release 文件夹
+
+2) 生成干净的发布文件夹（PowerShell）：
+   Set-Location 'E:\Code\budget-aware-mot'
+   .\.venv\Scripts\python.exe release\make_release.py --author "Jinhao Yang"
+   → 生成 E:\Code\budget-aware-tracking\
+   看屏幕最后的 text scan：显示 (nothing found) 就可以继续；有内容就把 release\release_check.txt 发给 Claude
+
+3) GitHub 网页新建仓库：名字 budget-aware-tracking，选 Public，三个勾都不要勾
+
+4) 上传（git 身份和代理上次已设置好，不用再设）：
+   Set-Location 'E:\Code\budget-aware-tracking'
+   git init
+   git add .
+   git commit -m "Budget-aware multi-object tracking study on MOT17 with a pre-registered test"
+   git branch -M main
+   git remote add origin https://github.com/EnokiSachi/budget-aware-tracking.git
+   git push -u origin main
+
+5) 检查：打开 https://github.com/EnokiSachi/budget-aware-tracking
+   首页 README 正常显示、顶部有精度—延迟前沿图；仓库里没有图片数据集和 .pt 文件。
+   右侧 About 齿轮里可以填：
+   Description: Where should a real-time tracker spend its compute? A budget-aware MOT17 study with a pre-registered test
+   Topics: multi-object-tracking, kalman-filter, edge-computing, yolov8, computer-vision

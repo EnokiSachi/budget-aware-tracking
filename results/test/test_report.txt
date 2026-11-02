@@ -1,0 +1,60 @@
+# Step 10 报告：预注册测试集一次性评测（MOT17 各序列后 50%）
+protocol: results/test/PROTOCOL.json  reruns_before_this=0
+
+## H1 跟踪器（YOLOv8n@640）
+thesis DeepSORT : HOTA 35.08  MOTA 29.10  IDF1 37.95  IDSW  103  Rec 31.57
+ByteTrack (own) : HOTA 38.60  MOTA 31.42  IDF1 44.64  IDSW   88  Rec 34.33
+HOTA per-seq (ByteTrack − DeepSORT): wins 7/7 | 02:+1.86  04:+3.08  05:+6.79  09:+1.13  10:+3.31  11:+7.71  13:+2.49
+IDF1 per-seq: wins 7/7 | 02:+2.23  04:+6.62  05:+13.90  09:+4.96  10:+3.53  11:+14.60  13:+3.86
+
+## H2 检测器网格（k=1）
+    n@640   HOTA 38.60  MOTA 31.42  IDF1 44.64  IDSW   88  Rec 34.33  | GPU  12.6 ms  CPU   53.3 ms
+    n@960   HOTA 42.06  MOTA 36.83  IDF1 49.48  IDSW  105  Rec 40.85  | GPU  12.9 ms  CPU  107.2 ms
+    n@1280  HOTA 44.50  MOTA 39.53  IDF1 52.59  IDSW  120  Rec 44.49  | GPU  14.7 ms  CPU  148.1 ms
+    s@640   HOTA 41.68  MOTA 35.16  IDF1 48.84  IDSW   95  Rec 39.05  | GPU  11.0 ms  CPU  109.9 ms
+    s@960   HOTA 46.13  MOTA 41.47  IDF1 54.35  IDSW  124  Rec 46.96  | GPU  12.5 ms  CPU  218.5 ms
+    s@1280  HOTA 47.55  MOTA 42.67  IDF1 56.27  IDSW  152  Rec 51.05  | GPU  17.8 ms  CPU  356.6 ms
+    m@640   HOTA 42.20  MOTA 34.88  IDF1 48.67  IDSW  103  Rec 39.11  | GPU  14.4 ms  CPU  239.0 ms
+    m@960   HOTA 46.27  MOTA 39.20  IDF1 54.17  IDSW  119  Rec 44.83  | GPU  21.9 ms  CPU  490.6 ms
+    m@1280  HOTA 47.50  MOTA 40.36  IDF1 55.34  IDSW  141  Rec 48.38  | GPU  35.7 ms  CPU  857.5 ms
+ n-ft@640   HOTA 44.49  MOTA 42.92  IDF1 54.53  IDSW  171  Rec 51.02  | GPU  12.3 ms  CPU   39.1 ms
+ n-ft@960   HOTA 48.34  MOTA 46.24  IDF1 59.03  IDSW  161  Rec 55.89  | GPU  12.0 ms  CPU   70.1 ms
+ n-ft@1280  HOTA 49.03  MOTA 48.23  IDF1 59.53  IDSW  166  Rec 57.56  | GPU  14.1 ms  CPU  124.1 ms
+ s-ft@640   HOTA 45.19  MOTA 43.46  IDF1 55.09  IDSW  171  Rec 52.01  | GPU  10.7 ms  CPU   92.6 ms
+ s-ft@960   HOTA 49.13  MOTA 49.34  IDF1 60.31  IDSW  201  Rec 57.39  | GPU  12.3 ms  CPU  184.6 ms
+ s-ft@1280  HOTA 50.11  MOTA 49.38  IDF1 61.07  IDSW  160  Rec 57.97  | GPU  17.5 ms  CPU  325.6 ms
+[GPU] n-ft@640 HOTA 44.49 vs best pretrained ≤ latency yolov8s_640_none HOTA 41.68  (wins 2/7 | 02:-6.83  04:+9.46  05:-5.58  09:-2.61  10:+1.63  11:-1.37  13:-8.72)
+[GPU] n-ft@960 HOTA 48.34 vs best pretrained ≤ latency yolov8s_640_none HOTA 41.68  (wins 3/7 | 02:+2.45  04:+13.67  05:-7.50  09:-0.51  10:+4.61  11:-1.90  13:-3.01)
+[GPU] n-ft@1280 HOTA 49.03 vs best pretrained ≤ latency yolov8s_960_none HOTA 46.13  (wins 2/7 | 02:-1.12  04:+7.33  05:-6.41  09:-3.81  10:+2.31  11:-1.23  13:-5.17)
+[GPU] s-ft@960 HOTA 49.13 vs best pretrained ≤ latency yolov8s_640_none HOTA 41.68  (wins 4/7 | 02:+1.27  04:+14.19  05:-3.31  09:-2.10  10:+7.25  11:+0.20  13:-0.18)
+[GPU] s-ft@1280 HOTA 50.11 vs best pretrained ≤ latency yolov8s_960_none HOTA 46.13  (wins 3/7 | 02:+2.34  04:+8.53  05:-8.12  09:-3.00  10:+4.52  11:-3.75  13:-5.02)
+[CPU] n-ft@960 HOTA 48.34 vs best pretrained ≤ latency yolov8n_640_none HOTA 38.60  (wins 5/7 | 02:+5.67  04:+17.27  05:-4.37  09:+2.78  10:+6.53  11:-0.85  13:+1.63)
+[CPU] n-ft@1280 HOTA 49.03 vs best pretrained ≤ latency yolov8n_960_none HOTA 42.06  (wins 3/7 | 02:+7.46  04:+12.73  05:-4.85  09:-3.88  10:+2.50  11:-0.47  13:-0.04)
+[CPU] s-ft@640 HOTA 45.19 vs best pretrained ≤ latency yolov8n_640_none HOTA 38.60  (wins 4/7 | 02:+0.88  04:+13.13  05:-0.80  09:-3.85  10:+4.78  11:-0.86  13:+0.93)
+[CPU] s-ft@960 HOTA 49.13 vs best pretrained ≤ latency yolov8n_1280_none HOTA 44.50  (wins 5/7 | 02:+0.29  04:+8.99  05:+4.96  09:-5.04  10:+2.17  11:+0.94  13:-2.85)
+[CPU] s-ft@1280 HOTA 50.11 vs best pretrained ≤ latency yolov8s_960_none HOTA 46.13  (wins 3/7 | 02:+2.34  04:+8.53  05:-8.12  09:-3.00  10:+4.52  11:-3.75  13:-5.02)
+
+## H3 预算分配（CPU）
+n-ft@960 k=2 : HOTA 47.42  MOTA 45.38  IDF1 57.50  IDSW  190  Rec 54.54  | CPU 35.1 ms/frame
+n-ft@640 k=1 : HOTA 44.49  MOTA 42.92  IDF1 54.53  IDSW  171  Rec 51.02  | CPU 39.1 ms/frame
+per-seq HOTA: wins 5/7 | 02:+7.52  04:+3.73  05:-1.84  09:+2.85  10:+0.30  11:+0.38  13:-3.44
+
+## H4 自适应调度（相同检测率插值，HOTA %）
+rate    fixed      learned(Δ)       segrule(Δ)
+0.20   44.61    42.25(-2.37)    43.89(-0.72)
+0.25   45.65    43.55(-2.10)    44.53(-1.12)
+0.33   46.38    44.74(-1.64)    45.72(-0.66)
+0.50   47.42    45.89(-1.53)    47.48(+0.06)
+learned  rate 0.25: wins 0/7 | 02:-1.86  04:-0.36  05:-0.44  09:-4.76  10:-1.80  11:-4.79  13:-2.38
+learned  rate 0.33: wins 2/7 | 02:-4.09  04:+0.00  05:+1.26  09:-1.70  10:-2.45  11:-2.76  13:-2.11
+segrule  rate 0.25: wins 3/7 | 02:+1.27  04:-0.42  05:+2.72  09:-2.34  10:-1.08  11:-1.37  13:+1.83
+segrule  rate 0.33: wins 5/7 | 02:+0.23  04:-0.02  05:+1.43  09:+0.89  10:-1.04  11:+0.09  13:+2.70
+
+## H5 跨场景（只在未见场景 ['MOT17-09', 'MOT17-10', 'MOT17-11'] 的后 50% 上评测）
+pretrained n@960          : HOTA 48.18  MOTA 50.45  IDF1 59.38  IDSW   45  Rec 55.14
+cross-scene nx-ft@960     : HOTA 40.67  MOTA 42.56  IDF1 51.13  IDSW   37  Rec 45.20
+same-scene n-ft@960       : HOTA 47.35  MOTA 51.47  IDF1 58.17  IDSW   35  Rec 55.75
+per-seq HOTA (cross − pretrained): wins 0/3 | 09:-6.02  10:-10.11  11:-5.66
+per-seq HOTA (same − cross)      : wins 3/3 | 09:+2.74  10:+11.41  11:+4.10
+
+total time: 602s

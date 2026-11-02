@@ -1,0 +1,7 @@
+# Step 4 报告：检测器微调（MOT17 前 25%）
+dataset: train 1129 images / 23730 boxes; val 198 images / 4141 boxes
+epochs=40 imgsz=1280 batch=-1
+yolov8n: trained 1593s | pretrained: mAP50=0.666 mAP50-95=0.392 P=0.750 R=0.586 | fine-tuned: mAP50=0.920 mAP50-95=0.672 P=0.930 R=0.828
+yolov8s: trained 2500s | pretrained: mAP50=0.691 mAP50-95=0.417 P=0.746 R=0.626 | fine-tuned: mAP50=0.927 mAP50-95=0.685 P=0.934 R=0.857
+total time: 4143s
+注：此处验证集是 q1 末尾 15% 帧，与训练帧来自同一时段，只用于确认训练正常；真正的比较在 25%–50%（q2）上用跟踪指标进行。

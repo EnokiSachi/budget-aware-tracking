@@ -1,0 +1,6 @@
+# Step 9 报告：跨场景微调
+train scenes: ['MOT17-02', 'MOT17-04', 'MOT17-05', 'MOT17-13'] (first 25% of each)
+held-out scenes: ['MOT17-09', 'MOT17-10', 'MOT17-11']
+dataset: train 688 images / 18003 boxes; val 120 / 3168
+trained 1301s; detection cache: yolov8nx-ft_960_none
+total 1422s

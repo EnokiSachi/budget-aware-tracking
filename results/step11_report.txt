@@ -1,0 +1,8 @@
+# Step 11 报告：端到端帧率实测
+source: test.mp4 1920x1080, 300 frames (frames pre-loaded; decode excluded)
+
+B1 GPU, detect every frame, write video:  44.3 FPS  | detect 11.1ms  track 0.7ms  draw 1.7ms  write 9.1ms
+B2 GPU, detect every frame, no write:  81.5 FPS  | detect 10.0ms  track 0.7ms  draw 1.6ms  write 0.0ms
+C  CPU 4 threads, detect every 3rd frame, no write:  39.6 FPS  | detect 22.6ms  track 0.5ms  draw 2.2ms  write 0.0ms
+
+对照：毕设流水线（step3 报告）约 8.5 FPS（GPU 检测，含写视频）。
